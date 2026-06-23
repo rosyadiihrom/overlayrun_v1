@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty Running Overlay Generator PRO</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@1,900&family=Bebas+Neue&family=Bruno+Ace+SC&family=Changa:wght@800&family=Fira+Sans+Condensed:ital,wght@1,900&family=Impact&family=Kanit:ital,wght@1,900&family=Montserrat:ital,wght@1,900;1,400&family=Orbitron:wght@900&family=Oswald:wght@700&family=Racing+Sans+One&family=Rubik+Mono+One&family=Russo+One&family=Share+Tech+Mono&family=Squada+One&family=Syne:wght@800&family=Syncopate:wght@700&family=Teko:wght@700&family=Wallpoet&display=swap" rel="stylesheet">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@1,900&family=Bebas+Neue&family=Bruno+Ace+SC&family=Changa:wght@800&family=Fira+Sans+Condensed:ital,wght@1,900&family=Impact&family=Kanit:ital,wght@1,900&family=Montserrat:ital,wght@1,400;1,900&family=Orbitron:wght@900&family=Oswald:wght@700&family=Racing+Sans+One&family=Rubik+Mono+One&family=Russo+One&family=Share+Tech+Mono&family=Squada+One&family=Syncopate:wght@700&family=Syne:wght@800&family=Teko:wght@700&family=Wallpoet&display=swap');
+
         :root {
             --bg-color: #f3f4f6;
             --card-bg: #ffffff;
@@ -183,9 +179,6 @@
         .btn-down { background-color: #2563eb; color: white; }
         .action-btns button:hover { opacity: 0.9; }
 
-        /* =======================================================
-           STYLING ATURAN PREVIEW (PURE TEXT ONLY & SHADOW)
-           ====================================================== */
         .preview-box div, .preview-box span, .preview-box small {
             color: #ffffff;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
@@ -193,7 +186,7 @@
             white-space: nowrap;
         }
 
-        /* FIX: Penulisan nama font yang memiliki spasi kini dibungkus kutip tunggal secara konsisten */
+        /* 20 GAYA OVERLAY */
         .t1 .main-val { font-family: 'Archivo Black', sans-serif; font-size: 3.5rem; letter-spacing: -2px; }
         .t1 .sub-row { font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; display: flex; gap: 25px; margin-top: 2px; }
 
@@ -259,8 +252,9 @@
 
         .t20 .main-val { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.2rem; }
         .t20 .sub-row { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.1rem; display: flex; gap: 25px; letter-spacing: 2px; margin-top: 2px; }
-
     </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -293,8 +287,7 @@
 
         <h3 style="margin-bottom: 5px;">Live Preview (Background Transparan)</h3>
         <div class="preview-box-wrapper">
-            <div class="preview-box t1" id="overlayPreview">
-                </div>
+            <div class="preview-box t1" id="overlayPreview"></div>
         </div>
 
         <div class="panel" style="margin-top: 20px;">
@@ -330,18 +323,15 @@
     </div>
 
     <script>
-        // DOM Elements
         const inputDistance = document.getElementById('inputDistance');
         const inputPace = document.getElementById('inputPace');
         const inputTime = document.getElementById('inputTime');
         const inputElev = document.getElementById('inputElev');
-
         const previewBox = document.getElementById('overlayPreview');
         const themeToggle = document.getElementById('themeToggle');
 
         let currentTemplate = 1;
 
-        // --- MATH CONVERSIONS ENGINE ---
         function timeToSeconds(timeStr) {
             let totalSeconds = 0;
             const hourMatch = timeStr.match(/(\d+)\s*h/i);
@@ -399,10 +389,8 @@
             return paceStr;
         }
 
-        // --- AUTOMATIC CALCULATOR ---
         function calculateAndRender(triggeredBy) {
             let dist = parseFloat(inputDistance.value) || 0;
-
             if (dist > 0) {
                 if (triggeredBy === 'distance' || triggeredBy === 'pace') {
                     if(inputPace.value.includes(':') || parseFloat(inputPace.value)) {
@@ -419,7 +407,6 @@
             renderOverlay();
         }
 
-        // --- CORE OVERLAY RENDERER ---
         function renderOverlay() {
             const dist = (parseFloat(inputDistance.value) || 0).toFixed(2);
             const paceUi = formatPaceForUi(inputPace.value);
@@ -456,7 +443,6 @@
             }
         }
 
-        // --- EVENT LISTENERS ---
         inputDistance.addEventListener('input', () => calculateAndRender('distance'));
         inputPace.addEventListener('input', () => calculateAndRender('pace'));
         inputTime.addEventListener('input', () => calculateAndRender('time'));
@@ -465,18 +451,18 @@
         window.changeTemplate = function(id, btn) {
             document.querySelectorAll('.tmpl-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             previewBox.className = `preview-box t${id}`;
             currentTemplate = id;
             renderOverlay();
         }
 
-        // --- EXPORT HANDLING ---
+        // FIX: Menambahkan allowTaint dan mengonfigurasi ulang ekspor gambar khusus CORS GitHub
         const exportOptions = {
             backgroundColor: null,
             scale: 3, 
             logging: false,
-            useCORS: true
+            useCORS: true,
+            allowTaint: true
         };
 
         document.getElementById('btnDownload').addEventListener('click', () => {
@@ -502,7 +488,6 @@
             });
         });
 
-        // --- DARK MODE TOGGLE ---
         themeToggle.addEventListener('click', () => {
             const isDark = document.body.getAttribute('data-theme') === 'dark';
             if (isDark) {
