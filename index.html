@@ -5,9 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty Running Overlay Generator PRO</title>
     
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@1,900&family=Bebas+Neue&family=Bruno+Ace+SC&family=Changa:wght@800&family=Fira+Sans+Condensed:ital,wght@1,900&family=Impact&family=Kanit:ital,wght@1,900&family=Montserrat:ital,wght@1,400;1,900&family=Orbitron:wght@900&family=Oswald:wght@700&family=Racing+Sans+One&family=Rubik+Mono+One&family=Russo+One&family=Share+Tech+Mono&family=Squada+One&family=Syncopate:wght@700&family=Syne:wght@800&family=Teko:wght@700&family=Wallpoet&display=swap');
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
+    <style>
         :root {
             --bg-color: #f3f4f6;
             --card-bg: #ffffff;
@@ -58,7 +82,7 @@
             border: 1px solid var(--border-color);
             color: var(--text-color);
             padding: 8px 16px;
-            border-radius: 20px;
+            border-radius: 200px;
             cursor: pointer;
             font-weight: bold;
         }
@@ -179,6 +203,9 @@
         .btn-down { background-color: #2563eb; color: white; }
         .action-btns button:hover { opacity: 0.9; }
 
+        /* =======================================================
+           STYLING GAYA 1 - 20 (PURE 100% GOOGLE FONTS)
+           ====================================================== */
         .preview-box div, .preview-box span, .preview-box small {
             color: #ffffff;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
@@ -186,75 +213,93 @@
             white-space: nowrap;
         }
 
-        /* 20 GAYA OVERLAY */
+        /* Gaya 1: Archivo Black */
         .t1 .main-val { font-family: 'Archivo Black', sans-serif; font-size: 3.5rem; letter-spacing: -2px; }
         .t1 .sub-row { font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; display: flex; gap: 25px; margin-top: 2px; }
 
+        /* Gaya 2: Barlow Condensed Bold Italic */
         .t2 .main-val { font-family: 'Barlow Condensed', sans-serif; font-size: 4.8rem; font-style: italic; font-weight: 900; letter-spacing: -1px; }
         .t2 .sub-row { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-style: italic; display: flex; gap: 30px; }
 
+        /* Gaya 3: Orbitron */
         .t3 .main-val { font-family: 'Orbitron', sans-serif; font-size: 3.2rem; font-weight: 900; letter-spacing: 2px; color: #00ffcc; text-shadow: 0 0 8px rgba(0,255,204,0.6); }
         .t3 .sub-row { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 900; display: flex; gap: 20px; margin-top: 5px; }
 
+        /* Gaya 4: Syncopate */
         .t4 .main-val { font-family: 'Syncopate', sans-serif; font-size: 2.0rem; font-weight: 700; letter-spacing: 4px; }
         .t4 .sub-row { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.8rem; display: flex; gap: 25px; margin-top: 10px; }
 
-        .t5 .main-val { font-family: 'Impact', sans-serif; font-size: 4.6rem; letter-spacing: 1px; }
-        .t5 .sub-row { font-family: 'Impact', sans-serif; font-size: 1.4rem; display: flex; gap: 35px; }
+        /* Gaya 5: Anton (Alternatif Pengganti Impact) */
+        .t5 .main-val { font-family: 'Anton', sans-serif; font-size: 4.6rem; letter-spacing: 1px; }
+        .t5 .sub-row { font-family: 'Anton', sans-serif; font-size: 1.4rem; letter-spacing: 1px; display: flex; gap: 35px; }
 
+        /* Gaya 6: Grid Oswald */
         .t6 { flex-direction: row !important; gap: 15px; justify-content: space-evenly !important; width: 100%; }
         .t6 .col { display: flex; flex-direction: column; align-items: center; }
         .t6 .col .lbl { font-family: 'Oswald', sans-serif; font-size: 0.75rem; opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;}
         .t6 .col .val { font-family: 'Oswald', sans-serif; font-size: 2.3rem; font-weight: 700; }
 
+        /* Gaya 7: Kanit Bold Italic */
         .t7 .main-val { font-family: 'Kanit', sans-serif; font-weight: 900; font-style: italic; font-size: 4rem; color: #ccff00; text-shadow: 0 0 12px rgba(204,255,0,0.7); }
         .t7 .sub-row { font-family: 'Kanit', sans-serif; font-weight: 900; font-style: italic; font-size: 1.1rem; display: flex; gap: 25px; }
 
+        /* Gaya 8: Racing Sans One */
         .t8 .main-val { font-family: 'Racing Sans One', sans-serif; font-size: 3.6rem; letter-spacing: -1px; }
         .t8 .sub-row { font-family: 'Russo One', sans-serif; font-size: 1.1rem; display: flex; gap: 20px; margin-top: 4px; }
 
+        /* Gaya 9: Teko Slim Tall */
         .t9 .main-val { font-family: 'Teko', sans-serif; font-size: 5.5rem; text-transform: uppercase; margin-bottom: -10px; }
         .t9 .sub-row { font-family: 'Teko', sans-serif; font-size: 1.8rem; display: flex; gap: 35px; }
 
+        /* Gaya 10: Left Aligned Montserrat */
         .t10 { align-items: flex-start !important; padding-left: 35px !important; }
         .t10 .main-val { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.5rem; letter-spacing: -3px; }
         .t10 .sub-row { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1rem; display: flex; gap: 20px; }
 
+        /* Gaya 11: Bebas Neue */
         .t11 .main-val { font-family: 'Bebas Neue', sans-serif; font-size: 5.5rem; letter-spacing: 3px; }
         .t11 .sub-row { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; display: flex; gap: 40px; letter-spacing: 1px; margin-top: -5px;}
 
+        /* Gaya 12: Fira Sans Condensed Italic */
         .t12 .main-val { font-family: 'Fira Sans Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 4.4rem; letter-spacing: -1px; color: #ff3366; }
         .t12 .sub-row { font-family: 'Fira Sans Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.3rem; display: flex; gap: 25px; color: #fff; }
 
+        /* Gaya 13: Changa Bold */
         .t13 .main-val { font-family: 'Changa', sans-serif; font-size: 3.6rem; letter-spacing: -2px; font-weight: 800; text-transform: uppercase; }
         .t13 .sub-row { font-family: 'Changa', sans-serif; font-size: 1.2rem; display: flex; gap: 30px; font-weight: 800; color: #ffea00; }
 
+        /* Gaya 14: Syne Extreme */
         .t14 .main-val { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; text-transform: uppercase; }
         .t14 .sub-row { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; display: flex; gap: 25px; margin-top: 5px; }
 
+        /* Gaya 15: Share Tech Mono Right Aligned */
         .t15 { align-items: flex-end !important; padding-right: 40px !important; }
         .t15 .main-val { font-family: 'Share Tech Mono', monospace; font-size: 3.8rem; color: #00ff66; }
         .t15 .sub-row { font-family: 'Share Tech Mono', monospace; font-size: 1.1rem; display: flex; gap: 20px; }
 
+        /* Gaya 16: Squada One */
         .t16 .main-val { font-family: 'Squada One', sans-serif; font-size: 5rem; letter-spacing: 1px; }
         .t16 .sub-row { font-family: 'Squada One', sans-serif; font-size: 1.5rem; display: flex; gap: 30px; letter-spacing: 1px; }
 
+        /* Gaya 17: Wallpoet Sci-Fi */
         .t17 .main-val { font-family: 'Wallpoet', sans-serif; font-size: 2.8rem; color: #ff00ff; text-shadow: 0 0 10px #ff00ffaa; }
         .t17 .sub-row { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1rem; display: flex; gap: 20px; margin-top: 8px; }
 
+        /* Gaya 18: Bruno Ace SC Center */
         .t18 { text-align: center; }
         .t18 .main-val { font-family: 'Bruno Ace SC', sans-serif; font-size: 2.6rem; letter-spacing: 2px; }
         .t18 .sub-row { font-family: 'Bruno Ace SC', sans-serif; font-size: 0.9rem; display: flex; gap: 25px; margin-top: 8px; justify-content: center; }
 
+        /* Gaya 19: Split Panel Anton & Oswald (Alternatif Pengganti Impact) */
         .t19 { flex-direction: row !important; justify-content: center !important; gap: 30px; width: 100%; }
-        .t19 .left-part { font-family: 'Impact', sans-serif; font-size: 4.5rem; border-right: 3px solid #fff; padding-right: 25px; }
+        .t19 .left-part { font-family: 'Anton', sans-serif; font-size: 4.5rem; border-right: 3px solid #fff; padding-right: 25px; }
         .t19 .right-part { display: flex; flex-direction: column; gap: 4px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; align-items: flex-start; }
 
+        /* Gaya 20: Montserrat Wide Lettering */
         .t20 .main-val { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 3.2rem; }
         .t20 .sub-row { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.1rem; display: flex; gap: 25px; letter-spacing: 2px; margin-top: 2px; }
+
     </style>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -287,7 +332,8 @@
 
         <h3 style="margin-bottom: 5px;">Live Preview (Background Transparan)</h3>
         <div class="preview-box-wrapper">
-            <div class="preview-box t1" id="overlayPreview"></div>
+            <div class="preview-box t1" id="overlayPreview">
+                </div>
         </div>
 
         <div class="panel" style="margin-top: 20px;">
@@ -323,15 +369,18 @@
     </div>
 
     <script>
+        // DOM Elements
         const inputDistance = document.getElementById('inputDistance');
         const inputPace = document.getElementById('inputPace');
         const inputTime = document.getElementById('inputTime');
         const inputElev = document.getElementById('inputElev');
+
         const previewBox = document.getElementById('overlayPreview');
         const themeToggle = document.getElementById('themeToggle');
 
         let currentTemplate = 1;
 
+        // --- MATH CONVERSIONS ENGINE ---
         function timeToSeconds(timeStr) {
             let totalSeconds = 0;
             const hourMatch = timeStr.match(/(\d+)\s*h/i);
@@ -389,8 +438,10 @@
             return paceStr;
         }
 
+        // --- AUTOMATIC CALCULATOR ---
         function calculateAndRender(triggeredBy) {
             let dist = parseFloat(inputDistance.value) || 0;
+
             if (dist > 0) {
                 if (triggeredBy === 'distance' || triggeredBy === 'pace') {
                     if(inputPace.value.includes(':') || parseFloat(inputPace.value)) {
@@ -407,6 +458,7 @@
             renderOverlay();
         }
 
+        // --- CORE OVERLAY RENDERER ---
         function renderOverlay() {
             const dist = (parseFloat(inputDistance.value) || 0).toFixed(2);
             const paceUi = formatPaceForUi(inputPace.value);
@@ -443,6 +495,7 @@
             }
         }
 
+        // --- EVENT LISTENERS ---
         inputDistance.addEventListener('input', () => calculateAndRender('distance'));
         inputPace.addEventListener('input', () => calculateAndRender('pace'));
         inputTime.addEventListener('input', () => calculateAndRender('time'));
@@ -451,18 +504,18 @@
         window.changeTemplate = function(id, btn) {
             document.querySelectorAll('.tmpl-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+
             previewBox.className = `preview-box t${id}`;
             currentTemplate = id;
             renderOverlay();
         }
 
-        // FIX: Menambahkan allowTaint dan mengonfigurasi ulang ekspor gambar khusus CORS GitHub
+        // --- EXPORT HANDLING ---
         const exportOptions = {
             backgroundColor: null,
             scale: 3, 
             logging: false,
-            useCORS: true,
-            allowTaint: true
+            useCORS: true
         };
 
         document.getElementById('btnDownload').addEventListener('click', () => {
@@ -488,6 +541,7 @@
             });
         });
 
+        // --- DARK MODE TOGGLE ---
         themeToggle.addEventListener('click', () => {
             const isDark = document.body.getAttribute('data-theme') === 'dark';
             if (isDark) {
